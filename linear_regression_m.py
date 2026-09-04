@@ -31,3 +31,12 @@ class MRegression:
         r2_score_ajus =  1 - (numerador / denominador)
 
         return r2_score_ajus
+
+    def rmse(self, y_true, y_pred):
+        erro = (y_true - y_pred) ** 2
+
+        media = np.mean(erro)
+
+        return np.sqrt(media)
+
+    

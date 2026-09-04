@@ -1,6 +1,6 @@
 import numpy as np
 
-class LinearRegression:
+class LinearRegressionS:
     def __init__(self, x, y):
         self.x = x
         self.y = y
@@ -25,9 +25,22 @@ class LinearRegression:
 
         return np.sum(residuos ** 2) 
 
-    def r2(self):
-        return 1 - ((np.sum((self.y - self.predict(self.x)) ** 2)) / (np.sum((self.y - np.mean(self.y)) ** 2)))
+    def r2_score(self, y_true, y_preditivo):
+            numerador = np.sum((y_true - y_preditivo) ** 2)
+            denominador = np.sum((y_true - np.mean(y_true)) ** 2)
+    
+            r2_score = 1 - (numerador / denominador)
+    
+            return r2_score
 
+    def r2_score_ajus(self, r2, n, p):
+            numerador = (1 - r2) * (n - 1)
+            denominador = (n - p - 1)
+    
+            r2_score_ajus =  1 - (numerador / denominador)
+
+            return r2_score_ajus
+    
     def summary(self):
         print(f"Interceptor: {self.b0}")
         print(f"Coeficiente Angular: {self.b1}")

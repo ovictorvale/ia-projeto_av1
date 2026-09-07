@@ -40,6 +40,26 @@ class LinearRegressionS:
             r2_score_ajus =  1 - (numerador / denominador)
 
             return r2_score_ajus
+
+#####
+    def mse(self):
+        previsao = self.predict(self.x)
+        erro = self.y - previsao
+
+        return np.mean(erro ** 2)
+
+    def rmse(self):
+        previsao = self.predict(self.x)
+        erro = self.y - previsao
+
+        return np.sqrt(np.mean(erro ** 2))
+
+    def mae(self):
+        previsao = self.predict(self.x)
+        erro = self.y - previsao
+
+        return np.mean(np.abs(erro))
+#####
     
     def summary(self):
         print(f"Interceptor: {self.b0}")

@@ -141,3 +141,26 @@ print("Conforme pode ser observado a partir do retorno do terminal o modelo com 
 #h)
 print("\nh)")
 
+mse_completo = modelo.mse(y, y_preditivo)
+rmse_completo = modelo.rmse(y, y_preditivo)
+mae_completo = modelo.mae(y, y_preditivo)
+
+mse_simples = modelo_2.mse()
+rmse_simples = modelo_2.rmse()
+mae_simples = modelo_2.mae()
+
+print("\nModelo Regressão Múltipla:")
+print("Valor do MSE: ", mse_completo)
+print("Valor do RMSE: ", rmse_completo)
+print("Valor do MAE: ", mae_completo)
+
+print("\nModelo Regressão Simples:")
+print("Valor do MSE: ", mse_simples)
+print("Valor do RMSE: ", rmse_simples)
+print("Valor do MAE: ", mae_simples)
+
+print("\nAnálise das métricas: ")
+print("Conforme pode ser observado a partir da saída do terminal, o modelo de regressão múltipla apresentou valores menores\n" \
+"de MSE, RMSE, MAE, quando comparado com o modelo de regressão simples. Como essas métricas valores menores representam erros menores\n" \
+"o modelo de regressão linear múltipla apresentou melhor desempenho em relação aos erros de previsão.")
+
